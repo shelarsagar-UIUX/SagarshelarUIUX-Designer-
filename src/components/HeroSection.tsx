@@ -1,5 +1,44 @@
 import { motion } from "framer-motion";
 import avatar from "@/assets/avatar.jpg";
+import projectNestify from "@/assets/project-nestify.jpg";
+import projectPortfolio from "@/assets/project-portfolio.jpg";
+import projectMarketing from "@/assets/project-marketing.jpg";
+import projectSteakshack from "@/assets/project-steakshack.jpg";
+
+const row1 = [projectNestify, projectPortfolio, projectMarketing, projectSteakshack];
+const row2 = [projectSteakshack, projectMarketing, projectPortfolio, projectNestify];
+
+const MarqueeRow = ({
+  images,
+  reverse = false,
+}: {
+  images: string[];
+  reverse?: boolean;
+}) => {
+  const doubled = [...images, ...images, ...images];
+  return (
+    <div className="overflow-hidden py-2">
+      <div
+        className={reverse ? "scroll-marquee-reverse" : "scroll-marquee"}
+        style={{ display: "flex", gap: "1rem", width: "max-content" }}
+      >
+        {doubled.map((img, i) => (
+          <div
+            key={i}
+            className="w-52 h-36 md:w-64 md:h-44 rounded-xl overflow-hidden flex-shrink-0 bg-card"
+          >
+            <img
+              src={img}
+              alt="Project"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const HeroSection = () => {
   return (
@@ -11,7 +50,12 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="mb-6">
+          <motion.div
+            className="mb-6"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5, type: "spring", stiffness: 200 }}
+          >
             <img
               src={avatar}
               alt="Austin Pratik"
@@ -19,23 +63,45 @@ const HeroSection = () => {
               width={48}
               height={48}
             />
-          </div>
+          </motion.div>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
-            Hello! 👋 I'm
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="inline-block"
+            >
+              Hello! 👋 I'm
+            </motion.span>
             <br />
-            <span className="text-gradient">Austin Pratik</span>
+            <motion.span
+              className="text-gradient inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45, duration: 0.5 }}
+            >
+              Austin Pratik
+            </motion.span>
           </h1>
 
-          <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-md leading-relaxed">
+          <motion.p
+            className="mt-6 text-lg md:text-xl text-muted-foreground max-w-md leading-relaxed"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
             I'm a senior <strong className="text-foreground">product designer</strong> at{" "}
             <strong className="text-foreground">Apple</strong> crafting intuitive and impactful
             digital products.
-          </p>
+          </motion.p>
 
           <motion.a
             href="#projects"
             className="inline-flex mt-8 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.75, duration: 0.5 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
           >
@@ -44,18 +110,39 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Right gradient */}
-      <div className="hidden lg:block gradient-hero relative">
+      {/* Right gradient with marquee */}
+      <div className="hidden lg:flex gradient-hero relative flex-col justify-center overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="space-y-4"
+        >
+          <MarqueeRow images={row1} />
+          <MarqueeRow images={row2} reverse />
+        </motion.div>
+
         <motion.span
-          className="absolute bottom-20 right-16 text-[12rem] font-extrabold leading-none opacity-20 select-none"
-          style={{ color: "hsl(0 0% 100% / 0.3)" }}
+          className="absolute bottom-12 right-12 text-[10rem] font-extrabold leading-none select-none pointer-events-none"
+          style={{ color: "hsl(0 0% 100% / 0.15)" }}
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
         >
           hello
         </motion.span>
       </div>
+
+      {/* Mobile marquee below hero */}
+      <motion.div
+        className="lg:hidden overflow-hidden pb-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+      >
+        <MarqueeRow images={row1} />
+        <MarqueeRow images={row2} reverse />
+      </motion.div>
     </section>
   );
 };
