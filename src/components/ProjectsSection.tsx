@@ -51,8 +51,8 @@ const ProjectsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, i) => (
+            <Link to={`/project/${project.slug}`} key={project.title}>
             <motion.div
-              key={project.title}
               className="group bg-background rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-shadow cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
