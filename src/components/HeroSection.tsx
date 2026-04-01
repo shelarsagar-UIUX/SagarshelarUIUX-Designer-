@@ -58,7 +58,7 @@ const HeroSection = () => {
           >
             <img
               src={avatar}
-              alt="Austin Pratik"
+              alt="Sagar Shelar"
               className="w-12 h-12 rounded-full object-cover border-2 border-primary"
               width={48}
               height={48}
@@ -81,7 +81,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.5 }}
             >
-              Austin Pratik
+              Sagar Shelar
             </motion.span>
           </h1>
 
@@ -91,22 +91,35 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            I'm a senior <strong className="text-foreground">product designer</strong> at{" "}
-            <strong className="text-foreground">Apple</strong> crafting intuitive and impactful
-            digital products.
+            I'm a <strong className="text-foreground">UI/UX Designer</strong> with 3+ years of experience crafting intuitive, user-centric digital products at{" "}
+            <strong className="text-foreground">Bajaj Allianz</strong>.
           </motion.p>
 
-          <motion.a
-            href="#projects"
-            className="inline-flex mt-8 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
+          <motion.div
+            className="flex gap-3 mt-8 flex-wrap"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.75, duration: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
           >
-            View portfolio
-          </motion.a>
+            <motion.a
+              href="#projects"
+              className="inline-flex px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              View portfolio
+            </motion.a>
+            <motion.a
+              href="https://www.behance.net/sagarshelar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex px-6 py-3 rounded-full border border-border text-foreground font-semibold text-sm hover:bg-secondary transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              Behance ↗
+            </motion.a>
+          </motion.div>
         </motion.div>
       </div>
 

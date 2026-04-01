@@ -9,23 +9,23 @@ import { motion } from "framer-motion";
 const faqs = [
   {
     q: "What kind of work do you specialize in?",
-    a: "I specialize in end-to-end product design — from user research and wireframing to high-fidelity UI and design systems.",
+    a: "I specialize in end-to-end UI/UX design — from user research, journey mapping, and wireframing to high-fidelity UI, prototyping, and design systems for mobile and web platforms.",
   },
   {
     q: "What is your design process?",
-    a: "My process involves discovery, research, ideation, prototyping, testing, and iterative refinement to deliver impactful solutions.",
+    a: "My process involves discovery, user research, wireframing, prototyping, usability testing, and iterative refinement — always collaborating closely with cross-functional teams.",
   },
   {
     q: "What industries have you worked in?",
-    a: "I've worked across tech, e-commerce, fintech, healthcare, and consumer products with both startups and enterprise teams.",
+    a: "I've worked across insurance (Bajaj Allianz), IT consulting, advertising, e-commerce, and startups — delivering impactful designs for both enterprise and consumer products.",
   },
   {
     q: "What are the primary tools you use?",
-    a: "Figma, Framer, Adobe Creative Suite, Principle, and various prototyping and design system tools.",
+    a: "Figma, Adobe XD, Photoshop, Illustrator — along with prototyping tools and design system frameworks for seamless developer handoffs.",
   },
   {
     q: "How do you approach design challenges?",
-    a: "I start with understanding the user and business goals, then iterate rapidly with data-driven decisions and constant validation.",
+    a: "I start with understanding users and business goals through research, then iterate rapidly using A/B testing, client feedback, and data-driven decisions to deliver optimal solutions.",
   },
 ];
 
