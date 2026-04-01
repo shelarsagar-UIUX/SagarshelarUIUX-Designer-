@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import projectNestify from "@/assets/project-nestify.jpg";
 import projectPortfolio from "@/assets/project-portfolio.jpg";
 import projectMarketing from "@/assets/project-marketing.jpg";
@@ -10,24 +11,28 @@ const projects = [
     description: "Furniture marketplace for affordable new & secondhand.",
     tags: ["Furniture", "E-commerce Website"],
     image: projectNestify,
+    slug: "nestify-furnitures",
   },
   {
     title: "Adam Hiklin Portfolio",
     description: "Sleek portfolio with bold visuals, smooth flow, and motion.",
     tags: ["Portfolio", "Website"],
     image: projectPortfolio,
+    slug: "adam-hiklin-portfolio",
   },
   {
     title: "Vision Pulse Marketing",
     description: "Bold site showcasing services, work, and unique style.",
     tags: ["Marketing", "Website"],
     image: projectMarketing,
+    slug: "vision-pulse-marketing",
   },
   {
     title: "Steak Shack",
     description: "Mobile app to browse, customize, and order steaks.",
     tags: ["Restaurant", "Mobile App"],
     image: projectSteakshack,
+    slug: "steak-shack",
   },
 ];
 
@@ -46,8 +51,8 @@ const ProjectsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, i) => (
+            <Link to={`/project/${project.slug}`} key={project.title}>
             <motion.div
-              key={project.title}
               className="group bg-background rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-shadow cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -79,6 +84,7 @@ const ProjectsSection = () => {
                 </div>
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
       </div>
