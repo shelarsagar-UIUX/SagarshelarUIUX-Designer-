@@ -11,24 +11,28 @@ const projects = [
     description: "Furniture marketplace for affordable new & secondhand.",
     tags: ["Furniture", "E-commerce Website"],
     image: projectNestify,
+    slug: "nestify-furnitures",
   },
   {
     title: "Adam Hiklin Portfolio",
     description: "Sleek portfolio with bold visuals, smooth flow, and motion.",
     tags: ["Portfolio", "Website"],
     image: projectPortfolio,
+    slug: "adam-hiklin-portfolio",
   },
   {
     title: "Vision Pulse Marketing",
     description: "Bold site showcasing services, work, and unique style.",
     tags: ["Marketing", "Website"],
     image: projectMarketing,
+    slug: "vision-pulse-marketing",
   },
   {
     title: "Steak Shack",
     description: "Mobile app to browse, customize, and order steaks.",
     tags: ["Restaurant", "Mobile App"],
     image: projectSteakshack,
+    slug: "steak-shack",
   },
 ];
 
