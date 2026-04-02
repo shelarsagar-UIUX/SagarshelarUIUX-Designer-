@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+const aboutBio = "I am Sagar Shelar — a UI/UX designer who loves solving complex problems with user-friendly solutions. With a background in psychology and design, I specialize in creating intuitive experiences. Let's connect!";
+
 const cards = [
   {
     emoji: "🎨",
