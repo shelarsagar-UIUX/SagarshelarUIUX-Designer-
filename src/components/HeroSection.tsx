@@ -91,8 +91,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
           >
-            I'm a <strong className="text-foreground">UI/UX Designer</strong> with 3+ years of experience crafting intuitive, user-centric digital products at{" "}
-            <strong className="text-foreground">Bajaj Allianz</strong>.
+            I am a UI/UX designer who loves solving complex problems with user-friendly solutions. With a background in psychology and design, I specialize in creating intuitive experiences. Let's connect!
           </motion.p>
 
           <motion.div
