@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+const aboutBio = "I am Sagar Shelar — a UI/UX designer who loves solving complex problems with user-friendly solutions. With a background in psychology and design, I specialize in creating intuitive experiences. Let's connect!";
+
 const cards = [
   {
     emoji: "🎨",
@@ -88,6 +90,17 @@ const AboutSection = () => {
   return (
     <section className="py-24 px-8 md:px-16 lg:px-20 bg-background" id="about">
       <div className="max-w-6xl mx-auto">
+        {/* Bio */}
+        <motion.p
+          className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          {aboutBio}
+        </motion.p>
+
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {cards.map((card, i) => (
