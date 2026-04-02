@@ -4,8 +4,16 @@ import projectNestify from "@/assets/project-nestify.jpg";
 import projectPortfolio from "@/assets/project-portfolio.jpg";
 import projectMarketing from "@/assets/project-marketing.jpg";
 import projectSteakshack from "@/assets/project-steakshack.jpg";
+import projectPetcare from "@/assets/project-petcare.jpg";
 
 const projects = [
+  {
+    title: "Pet Care",
+    description: "Mobile app for pet grooming, buying, and care services.",
+    tags: ["Pet Care", "Mobile App"],
+    image: projectPetcare,
+    slug: "pet-care",
+  },
   {
     title: "Nestify Furnitures",
     description: "Furniture marketplace for affordable new & secondhand.",
