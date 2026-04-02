@@ -5,6 +5,7 @@ import projectNestify from "@/assets/project-nestify.jpg";
 import projectPortfolio from "@/assets/project-portfolio.jpg";
 import projectMarketing from "@/assets/project-marketing.jpg";
 import projectSteakshack from "@/assets/project-steakshack.jpg";
+import projectPetcare from "@/assets/project-petcare.jpg";
 
 const caseStudies: Record<string, {
   title: string;
@@ -20,6 +21,33 @@ const caseStudies: Record<string, {
   solution: string;
   outcome: string[];
 }> = {
+  "pet-care": {
+    title: "Pet Care",
+    subtitle: "Mobile app for pet grooming, buying, and care services.",
+    tags: ["Pet Care", "Mobile App"],
+    image: projectPetcare,
+    overview:
+      "Pet Care is a comprehensive mobile application designed to simplify pet ownership by offering grooming services, pet buying/selling, and veterinary care — all in one platform. The goal was to create a delightful, trust-building experience for pet parents.",
+    role: "UI/UX Designer",
+    duration: "3 Months",
+    tools: ["Figma", "Adobe Illustrator", "Photoshop"],
+    challenge:
+      "Pet owners struggled to find reliable grooming services and trustworthy pet sellers in one place. Existing apps were fragmented, forcing users to switch between multiple platforms for different pet needs.",
+    process: [
+      "Conducted user research with 25+ pet owners to understand their daily challenges and service preferences.",
+      "Created user personas including first-time pet owners, experienced breeders, and busy professionals.",
+      "Mapped user journeys for booking grooming, browsing pets for adoption/purchase, and finding nearby vets.",
+      "Designed low-fidelity wireframes and iterated based on feedback from pet shop owners and groomers.",
+      "Built high-fidelity prototypes with a playful, warm visual language and tested across 3 usability rounds.",
+    ],
+    solution:
+      "Designed a warm, teal-themed mobile app with intuitive service booking for grooming (bath & dry, steam bath, sanitary bath), a pet marketplace with breed filters and location-based search, and a service provider rating system to build trust.",
+    outcome: [
+      "85% of test users completed a grooming booking in under 2 minutes",
+      "Pet marketplace browsing time increased by 40% due to engaging UI",
+      "4.7★ average rating from usability testing participants",
+    ],
+  },
   "nestify-furnitures": {
     title: "Nestify Furnitures",
     subtitle: "Furniture marketplace for affordable new & secondhand.",
