@@ -56,23 +56,25 @@ const HeroSection = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5, type: "spring", stiffness: 200 }}
           >
-            <img
+            <motion.img
               src={avatar}
               alt="Sagar Shelar"
-              className="w-12 h-12 rounded-full object-cover border-2 border-primary"
-              width={48}
-              height={48}
+              className="w-14 h-14 rounded-full object-cover border-2 border-primary shadow-lg cursor-pointer"
+              width={56}
+              height={56}
+              whileHover={{ scale: 1.2, rotate: 10 }}
+              transition={{ type: "spring", stiffness: 300 }}
             />
           </motion.div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mt-2">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
               className="inline-block"
             >
-              Hello! 👋 I'm
+              Hello! <span className="animate-wave">👋</span> I'm
             </motion.span>
             <br />
             <motion.span
