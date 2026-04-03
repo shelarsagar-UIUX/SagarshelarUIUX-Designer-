@@ -65,14 +65,14 @@ const HeroSection = () => {
             />
           </motion.div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mt-2">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
               className="inline-block"
             >
-              Hello! 👋 I'm
+              Hello! <span className="animate-wave">👋</span> I'm
             </motion.span>
             <br />
             <motion.span
