@@ -126,6 +126,13 @@ const Navbar = () => {
         transition={{ duration: 0.3 }}
       >
         <div className="px-6 py-4 space-y-2">
+          <button
+            onClick={() => setDark(!dark)}
+            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+          >
+            {dark ? <Sun size={16} /> : <Moon size={16} />}
+            {dark ? "Light Mode" : "Dark Mode"}
+          </button>
           {navLinks.map((link) => (
             <a
               key={link.label}
