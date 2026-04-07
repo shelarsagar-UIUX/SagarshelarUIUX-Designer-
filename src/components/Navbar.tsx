@@ -78,17 +78,26 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <motion.a
-          href="#contact"
-          className="hidden md:inline-flex px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          Hire Me
-        </motion.a>
-
-        {/* Mobile hamburger */}
+        {/* Dark mode toggle + CTA */}
+        <div className="hidden md:flex items-center gap-2">
+          <motion.button
+            onClick={() => setDark(!dark)}
+            className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-muted transition-colors"
+            whileHover={{ scale: 1.1, rotate: 15 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Toggle dark mode"
+          >
+            {dark ? <Sun size={18} /> : <Moon size={18} />}
+          </motion.button>
+          <motion.a
+            href="#contact"
+            className="px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            Hire Me
+          </motion.a>
+        </div>
         <button
           className="md:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
