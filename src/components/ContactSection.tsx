@@ -1,8 +1,9 @@
+import { forwardRef } from "react";
 import { motion } from "framer-motion";
 
-const ContactSection = () => {
+const ContactSection = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <section className="py-24 px-8 md:px-16 lg:px-20" id="contact">
+    <section ref={ref} className="py-24 px-8 md:px-16 lg:px-20" id="contact">
       <motion.div
         className="max-w-4xl mx-auto text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -40,6 +41,8 @@ const ContactSection = () => {
       </motion.div>
     </section>
   );
-};
+});
+
+ContactSection.displayName = "ContactSection";
 
 export default ContactSection;
