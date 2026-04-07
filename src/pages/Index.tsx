@@ -34,6 +34,7 @@ const Index = () => {
         <FAQSection />
         <ContactSection />
         <Footer />
+        <BottomTabBar />
       </main>
     </>
   );
