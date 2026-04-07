@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Moon, Sun } from "lucide-react";
 import avatar from "@/assets/avatar.jpg";
 
 const navLinks = [
@@ -13,12 +14,30 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dark, setDark] = useState(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("theme");
+      if (saved) return saved === "dark";
+      return document.documentElement.classList.contains("dark");
+    }
+    return false;
+  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [dark]);
 
   return (
     <motion.nav
@@ -61,17 +80,26 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <motion.a
-          href="#contact"
-          className="hidden md:inline-flex px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.97 }}
-        >
-          Hire Me
-        </motion.a>
-
-        {/* Mobile hamburger */}
+        {/* Dark mode toggle + CTA */}
+        <div className="hidden md:flex items-center gap-2">
+          <motion.button
+            onClick={() => setDark(!dark)}
+            className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground hover:bg-muted transition-colors"
+            whileHover={{ scale: 1.1, rotate: 15 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Toggle dark mode"
+          >
+            {dark ? <Sun size={18} /> : <Moon size={18} />}
+          </motion.button>
+          <motion.a
+            href="#contact"
+            className="px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            Hire Me
+          </motion.a>
+        </div>
         <button
           className="md:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -100,6 +128,13 @@ const Navbar = () => {
         transition={{ duration: 0.3 }}
       >
         <div className="px-6 py-4 space-y-2">
+          <button
+            onClick={() => setDark(!dark)}
+            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+          >
+            {dark ? <Sun size={16} /> : <Moon size={16} />}
+            {dark ? "Light Mode" : "Dark Mode"}
+          </button>
           {navLinks.map((link) => (
             <a
               key={link.label}
