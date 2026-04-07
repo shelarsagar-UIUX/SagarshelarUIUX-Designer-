@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Moon, Sun } from "lucide-react";
 import avatar from "@/assets/avatar.jpg";
 
 const navLinks = [
