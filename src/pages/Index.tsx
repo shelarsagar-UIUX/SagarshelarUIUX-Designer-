@@ -9,6 +9,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import BottomTabBar from "@/components/BottomTabBar";
 
 const Index = () => {
   const [splashDone, setSplashDone] = useState(false);
@@ -33,6 +34,7 @@ const Index = () => {
         <FAQSection />
         <ContactSection />
         <Footer />
+        <BottomTabBar />
       </main>
     </>
   );
