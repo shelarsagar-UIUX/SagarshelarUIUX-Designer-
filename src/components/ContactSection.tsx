@@ -40,6 +40,8 @@ const ContactSection = () => {
       </motion.div>
     </section>
   );
-};
+});
+
+ContactSection.displayName = "ContactSection";
 
 export default ContactSection;
