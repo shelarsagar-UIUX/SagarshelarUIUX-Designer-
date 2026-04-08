@@ -61,30 +61,33 @@ const ProjectsSection = () => {
           {projects.map((project, i) => (
             <Link to={`/project/${project.slug}`} key={project.title}>
             <motion.div
-              className="group bg-background rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-shadow cursor-pointer"
+              className="group bg-background rounded-2xl overflow-hidden border border-border cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
+              whileHover={{ y: -8, boxShadow: "0 20px 40px -12px hsl(var(--primary) / 0.15)" }}
             >
               <div className="overflow-hidden">
-                <img
+                <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full aspect-square object-cover"
                   loading="lazy"
                   width={640}
                   height={640}
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold mb-1">{project.title}</h3>
+                <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
                 <p className="text-muted-foreground text-sm mb-3">{project.description}</p>
                 <div className="flex gap-2 flex-wrap">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium"
+                      className="text-xs px-3 py-1 rounded-full bg-secondary text-secondary-foreground font-medium group-hover:bg-primary/10 group-hover:text-primary transition-colors duration-300"
                     >
                       {tag}
                     </span>
