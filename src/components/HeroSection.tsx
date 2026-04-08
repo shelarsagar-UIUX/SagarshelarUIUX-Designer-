@@ -43,8 +43,8 @@ const MarqueeRow = ({
 
 const roleTags = [
   { label: "UI/UX Designer", icon: Palette, bg: "bg-orange-50 dark:bg-orange-950/40", text: "text-orange-700 dark:text-orange-300" },
-  { label: "Product Designer", icon: PenTool, bg: "bg-blue-50 dark:bg-blue-950/40", text: "text-blue-700 dark:text-blue-300" },
   { label: "Vibe Coder", icon: Code, bg: "bg-pink-50 dark:bg-pink-950/40", text: "text-pink-700 dark:text-pink-300" },
+  { label: "Graphics Designer", icon: PenTool, bg: "bg-blue-50 dark:bg-blue-950/40", text: "text-blue-700 dark:text-blue-300" },
 ];
 
 const HeroSection = () => {
