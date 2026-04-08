@@ -4,7 +4,7 @@ import projectNestify from "@/assets/project-nestify.jpg";
 import projectPortfolio from "@/assets/project-portfolio.jpg";
 import projectMarketing from "@/assets/project-marketing.jpg";
 import projectSteakshack from "@/assets/project-steakshack.jpg";
-import { Palette, PenTool, Code } from "lucide-react";
+import { Palette, PenTool, Code, Download } from "lucide-react";
 
 const row1 = [projectNestify, projectPortfolio, projectMarketing, projectSteakshack];
 const row2 = [projectSteakshack, projectMarketing, projectPortfolio, projectNestify];
@@ -43,8 +43,8 @@ const MarqueeRow = ({
 
 const roleTags = [
   { label: "UI/UX Designer", icon: Palette, bg: "bg-orange-50 dark:bg-orange-950/40", text: "text-orange-700 dark:text-orange-300" },
-  { label: "Product Designer", icon: PenTool, bg: "bg-blue-50 dark:bg-blue-950/40", text: "text-blue-700 dark:text-blue-300" },
   { label: "Vibe Coder", icon: Code, bg: "bg-pink-50 dark:bg-pink-950/40", text: "text-pink-700 dark:text-pink-300" },
+  { label: "Graphics Designer", icon: PenTool, bg: "bg-blue-50 dark:bg-blue-950/40", text: "text-blue-700 dark:text-blue-300" },
 ];
 
 const HeroSection = () => {
@@ -100,7 +100,7 @@ const HeroSection = () => {
 
           {/* Role tags */}
           <motion.div
-            className="flex flex-col gap-3 mt-8"
+            className="flex flex-wrap gap-3 mt-8"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
@@ -108,13 +108,13 @@ const HeroSection = () => {
             {roleTags.map((tag, i) => (
               <motion.div
                 key={tag.label}
-                className={`inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full ${tag.bg} ${tag.text} font-semibold text-sm w-fit`}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${tag.bg} ${tag.text} font-semibold text-xs sm:text-sm w-fit`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 + i * 0.1, duration: 0.4 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <tag.icon size={18} />
+                <tag.icon size={16} />
                 {tag.label}
               </motion.div>
             ))}
@@ -134,6 +134,16 @@ const HeroSection = () => {
               whileTap={{ scale: 0.97 }}
             >
               View portfolio
+            </motion.a>
+            <motion.a
+              href="/resume.pdf"
+              download
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 text-white font-semibold text-sm hover:bg-emerald-600 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <Download size={16} />
+              Download Resume
             </motion.a>
             <motion.a
               href="https://www.behance.net/sagarshelar"
