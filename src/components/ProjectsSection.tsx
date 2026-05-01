@@ -46,10 +46,10 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <section className="py-24 px-8 md:px-16 lg:px-20 bg-card/50" id="projects">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 bg-card/50" id="projects">
+      <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-3xl md:text-4xl font-extrabold mb-12"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-8 sm:mb-10 lg:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -57,7 +57,7 @@ const ProjectsSection = () => {
           Selected Projects
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {projects.map((project, i) => (
             <Link to={`/project/${project.slug}`} key={project.title}>
             <motion.div
@@ -72,7 +72,7 @@ const ProjectsSection = () => {
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full aspect-square object-cover"
+                  className="w-full aspect-[4/3] sm:aspect-square object-cover"
                   loading="lazy"
                   width={640}
                   height={640}
@@ -80,8 +80,8 @@ const ProjectsSection = () => {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+              <div className="p-5 sm:p-6">
+                <h3 className="text-base sm:text-lg font-bold mb-1 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
                 <p className="text-muted-foreground text-sm mb-3">{project.description}</p>
                 <div className="flex gap-2 flex-wrap">
                   {project.tags.map((tag) => (
