@@ -49,14 +49,14 @@ const roleTags = [
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
+    <section className="relative min-h-screen grid grid-cols-1 lg:grid-cols-2 overflow-hidden pb-20 md:pb-0">
       {/* Left content */}
-      <div className="flex flex-col items-center lg:items-start justify-center px-8 md:px-16 lg:px-20 py-20 z-10">
+      <div className="flex flex-col items-center lg:items-start justify-center px-4 sm:px-6 md:px-10 lg:px-12 xl:px-20 pt-24 pb-10 md:py-20 z-10 w-full max-w-2xl mx-auto lg:max-w-none">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col items-center lg:items-start"
+          className="flex flex-col items-center lg:items-start w-full"
         >
           {/* Large profile photo card */}
           <motion.div
@@ -66,7 +66,7 @@ const HeroSection = () => {
             transition={{ delay: 0.2, duration: 0.6, type: "spring", stiffness: 150 }}
             whileHover={{ scale: 1.03, rotate: 0 }}
           >
-            <div className="w-56 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden border-4 border-background shadow-2xl">
+            <div className="w-44 h-56 sm:w-52 sm:h-68 md:w-60 md:h-76 lg:w-64 lg:h-80 rounded-2xl overflow-hidden border-4 border-background shadow-2xl">
               <img
                 src={avatar}
                 alt="Sagar Shelar"
@@ -83,7 +83,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight tracking-tight text-center lg:text-left">
               <span className="inline-block">
                 Hi <span className="animate-wave">👋</span>
               </span>
@@ -100,7 +100,7 @@ const HeroSection = () => {
 
           {/* Role tags */}
           <motion.div
-            className="flex flex-wrap gap-3 mt-8"
+            className="flex flex-wrap gap-2 sm:gap-3 mt-6 md:mt-8 justify-center lg:justify-start"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
@@ -122,14 +122,14 @@ const HeroSection = () => {
 
           {/* CTA buttons */}
           <motion.div
-            className="flex gap-3 mt-8 flex-wrap"
+            className="flex gap-2 sm:gap-3 mt-6 md:mt-8 flex-wrap justify-center lg:justify-start"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.95, duration: 0.5 }}
           >
             <motion.a
               href="#projects"
-              className="inline-flex px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
+              className="inline-flex px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-primary text-primary-foreground font-semibold text-xs sm:text-sm hover:opacity-90 transition-opacity"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -138,7 +138,7 @@ const HeroSection = () => {
             <motion.a
               href="/resume.pdf"
               download
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 text-white font-semibold text-sm hover:bg-emerald-600 transition-colors"
+              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-emerald-500 text-white font-semibold text-xs sm:text-sm hover:bg-emerald-600 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -149,7 +149,7 @@ const HeroSection = () => {
               href="https://www.behance.net/sagarshelar"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex px-6 py-3 rounded-full border border-border text-foreground font-semibold text-sm hover:bg-secondary transition-colors"
+              className="inline-flex px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border border-border text-foreground font-semibold text-xs sm:text-sm hover:bg-secondary transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -172,7 +172,7 @@ const HeroSection = () => {
         </motion.div>
 
         <motion.span
-          className="absolute bottom-12 right-12 text-[10rem] font-extrabold leading-none select-none pointer-events-none"
+          className="absolute bottom-8 right-8 xl:bottom-12 xl:right-12 text-[6rem] lg:text-[8rem] xl:text-[10rem] font-extrabold leading-none select-none pointer-events-none"
           style={{ color: "hsl(0 0% 100% / 0.15)" }}
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
